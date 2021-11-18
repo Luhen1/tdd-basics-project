@@ -1,40 +1,20 @@
+
 class Stack {
-  constructor() {
-    this.top = -1;
-    this.items = {};
-  }
-
-  get peek() {
-    return this.items[this.top];
-  }
-
-  push(value) {
-    this.top += 1;
-    this.items[this.top] = value;
-  }
+    constructor() {
+        this.top = -1;
+        this.item = {};
+    }
 }
 
-describe('My Stack', () => {
-  let stack;
+describe('My stack', () => {
 
-  beforeEach(() => {
-    stack = new Stack();
-  });
+    // todo makes sure that this method passes while you figure things out
+    it('is created empty', () => {
+        const stack = new Stack();
 
-  it('is created empty', () => {
-    expect(stack.top).toBe(-1);
-    expect(stack.items).toEqual({});
-  });
-
-  it('can push to the top', () => {
-    stack.push('🥑');
-    expect(stack.top).toBe(0);
-    expect(stack.peek).toBe('🥑');
-
-    stack.push('🌽');
-    expect(stack.top).toBe(1);
-    expect(stack.peek).toBe('🌽');
-  });
-
-  it.todo('can pop off');
-});
+        //we are expecting that the actual value is -1. So we use toBe to ensure that. toBe is our matcher
+        expect(stack.top).toBe(-1);
+        //expect that the stack is empty
+        expect(stack.item).toEqual({});
+    }); 
+})
